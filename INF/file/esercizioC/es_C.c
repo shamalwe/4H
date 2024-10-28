@@ -7,7 +7,6 @@ int main()
     int numCaratteri = 0, numParole = 0, numRighe = 0;
     int statoParola= 0; // Per indicare se siamo all'interno di una parola
 
-    // Apri il file in modalità lettura
     file = fopen("testo.txt", "r");
     if (file == NULL) 
     {
@@ -18,19 +17,19 @@ int main()
     while ((ch = fgetc(file)) != EOF) 
     {
 
-        // Conto i caratteri senza contare spazio, tab o righe
+        // Conto i caratteri 
         if (ch != ' ' && ch != '\t' && ch != '\n') 
         {
             numCaratteri++;
         }
 
-        //Condidizione per contare le righe
+        //conto le righe
         if (ch == '\n') 
         {
             numRighe++;
         }
 
-        //Condidizione per contare le parole
+        //conto le parole
         if (ch != ' ' && ch != '\t' && ch != '\n' && statoParola == 0) 
         {
             statoParola = 1;  // Siamo all'interno di una parola
@@ -38,7 +37,7 @@ int main()
         } 
         else if (ch == ' ' || ch == '\t' || ch == '\n') 
         {
-            statoParola = 0;  // Fine della parola
+            statoParola = 0; 
         }
     }
 
@@ -50,7 +49,6 @@ int main()
 
     fclose(file);
 
-    // Stampa il risultato
     printf("Caratteri: %d\n", numCaratteri);
     printf("Parole: %d\n", numParole);
     printf("Righe: %d\n", numRighe);
