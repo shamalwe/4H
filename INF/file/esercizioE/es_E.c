@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-void cesareCrypt(FILE* inFile, FILE* outFile, int n);
-void cesareDecrypt(FILE* inFile, FILE* outFile, int n);
+void cesareCrypt(FILE* inFile, FILE* outFile, int key);
+void cesareDecrypt(FILE* inFile, FILE* outFile, int key);
 int main() 
 {
     FILE *inFile = fopen("input.txt", "r");
     FILE *outFileCrypt = fopen("output.encrypt.txt", "w");
     FILE *outFileDecrypt;
 
-    int n = 4;  // Chiave per la crittografia
+    int chiave = 4;  // Chiave per la crittografia
 
     if (inFile == NULL) 
     {
@@ -16,7 +16,7 @@ int main()
         return 1;
     }
 
-    cesareCrypt(inFile, outFileCrypt, n);
+    cesareCrypt(inFile, outFileCrypt, chiave);
 
     fclose(inFile);
     fclose(outFileCrypt);
@@ -31,7 +31,7 @@ int main()
         return 1;
     }
 
-    cesareDecrypt(inFile, outFileDecrypt, n);
+    cesareDecrypt(inFile, outFileDecrypt, chiave);
 
     fclose(inFile);
     fclose(outFileDecrypt);
@@ -39,7 +39,7 @@ int main()
     return 0;
 }
 
-void cesareCrypt(FILE* inFile, FILE* outFile, int n) 
+void cesareCrypt(FILE* inFile, FILE* outFile, int key) 
 {
     char car;
     
@@ -48,17 +48,17 @@ void cesareCrypt(FILE* inFile, FILE* outFile, int n)
         // Crittografia
         if ( car >= 'A' && car <= 'Z') 
         {
-            car = (( car - 'A' + n) % 26) + 'A'; 
+            car = (( car - 'A' + key) % 26) + 'A'; 
         } 
         else if ( car >= 'a' && car <= 'z') 
         {
-            car = (( car - 'a' + n) % 26) + 'a'; 
+            car = (( car - 'a' + key) % 26) + 'a'; 
         }
         fputc(car, outFile);
     }
 }
 
-void cesareDecrypt(FILE* inFile, FILE* outFile, int n) 
+void cesareDecrypt(FILE* inFile, FILE* outFile, int key) 
 {
     char car;
     
@@ -67,11 +67,11 @@ void cesareDecrypt(FILE* inFile, FILE* outFile, int n)
         // Decrittografia
         if (car >= 'A' && car <= 'Z') 
         {
-            car = ((car - 'A' - n + 26) % 26) + 'A'; 
+            car = ((car - 'A' - key + 26) % 26) + 'A'; 
         } 
         else if (car >= 'a' && car <= 'z') 
         {
-            car = ((car - 'a' - n + 26) % 26) + 'a'; 
+            car = ((car - 'a' - key + 26) % 26) + 'a'; 
         }
         fputc(car, outFile);
     }
