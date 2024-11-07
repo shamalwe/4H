@@ -1,9 +1,10 @@
+//Welikadage Shamal 4H
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h> 
 #include <time.h>
 
-#define N 2
+#define N 10
 #define N_VOTI 5
 
 struct Persona
@@ -14,19 +15,25 @@ struct Persona
 }typedef Persona;
 
 void Carica(FILE* fileptr);
+//funzione per scrivere un file di N record con N costante posta a 10
 void Stampa(FILE* fileptr);
+//funzione per leggere e stampare su monitor le informazioni del file di record
 int RicCognome(FILE* fileptr, char cognome[]);
+//conta quante volte è presente uno studente che ha il cognome uguale alla stringa passata
 void Informazioni(FILE* fileptr);
+//per ogni studente visualizza il suo cognome, la media dei suoi voti, il suo voto più alto e il suo voto più basso
 
 int main()
 {
     srand(time(NULL));
     FILE* filept;
 
+    //apro il file in modo da poterlo modificare
     filept= fopen("studenti.dat", "wb");
     Carica(filept);
     fclose(filept);
 
+    //apro il file in modalità lettura
     filept= fopen("studenti.dat", "rb");
     Stampa(filept);
     fclose(filept);
@@ -48,6 +55,7 @@ int main()
 
 void Carica(FILE* fileptr)
 {
+    //record temporaneo
     Persona buffer;
     
     for(int i=0; i<N; i++)
@@ -62,7 +70,7 @@ void Carica(FILE* fileptr)
         {
             buffer.voti[j]= rand() % 10+1;
         }
-        fwrite(&buffer, sizeof(Persona), 1, fileptr);
+        fwrite(&buffer, sizeof(Persona), 1, fileptr); //funzione per scrivere nel file
         printf("\n");
     }
 }
@@ -71,7 +79,7 @@ void Stampa(FILE* fileptr)
 {
     Persona buffer;
 
-    while(fread(&buffer, sizeof(Persona), 1, fileptr)== 1)
+    while(fread(&buffer, sizeof(Persona), 1, fileptr)== 1) // "fread" funzione per leggere dal file
     {
         printf("Nome:\t\t %s\n", buffer.nome);
         printf("Cognome:\t %s\n", buffer.cognome);
