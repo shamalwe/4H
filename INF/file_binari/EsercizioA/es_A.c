@@ -4,7 +4,7 @@
 #include <stdlib.h> 
 #include <time.h>
 
-#define N 10 //(definito costante a 2 nella prova)
+#define N 2 //(definito costante a 2 nella prova)
 #define N_VOTI 5
 
 struct Persona
