@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "eSERCIZIO.C": "cpp",
-        "fseek.C": "cpp"
+        "fseek.C": "cpp",
+        "iostream": "cpp"
     }
 }
