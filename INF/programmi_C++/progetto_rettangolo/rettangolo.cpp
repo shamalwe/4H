@@ -11,10 +11,24 @@ class Rettangolo {
         double base;
 
     public:
+        
+        Rettangolo() {
+        altezza = 0;
+        base = 0;
+    }
 
-        Rettangolo(double altezza, double base){
+        Rettangolo(double parametro) {
+        altezza = parametro;
+        base = parametro;
+    }
+
+        Rettangolo(double altezza, double base) {
         this->altezza = altezza;
         this->base = base;
+    }
+
+        ~Rettangolo() {
+        cout<<"hai chiamato distruttore"<<endl;
     }
 
     double Perimetro() {
@@ -36,23 +50,33 @@ class Rettangolo {
         cout<<"Il valore delle perimetro e' "<<Perimetro()<<endl;
         cout<<"Il valore dell'area e' "<<Area()<<endl;
         cout<<"Il valore della diagonale e' "<<Diagonale()<<endl;
+        cout<<"fine della parte "<<endl;
     }
 };
 
 int main() {
 
-    double base, altezza;
+    double base, altezza, parametro;
     
+    Rettangolo r1;
+    r1.stampa();
+
+    cout<<"Inserisci il valore del parametro"<<endl;
+    cin>>parametro;
+    Rettangolo r2(parametro);
+    //r2.~Rettangolo();
+    r2.stampa();
+
     cout<<"Inserisci il valore dell'altezza"<<endl;
     cin>>altezza;
 
     cout<<"Inserisci il valore della base"<<endl;
     cin>>base;
 
-    Rettangolo r1(altezza, base);
+    Rettangolo r3(altezza, base);
 
     cout<<"[VALORI DEL PRIMO RETTANGOLO]"<<endl;
     cout<<"-------------------------------------"<<endl;
-    r1.stampa();
+    r3.stampa();
 }
  
