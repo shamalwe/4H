@@ -1,49 +1,41 @@
 #include <iostream>
 #include<cmath>
+#include "Rettangolo.h"
 
 using namespace std;
 
-class Rettangolo {
-    
-    private:
-
-        double altezza;
-        double base;
-
-    public:
-        
-        Rettangolo() {
+        Rettangolo::Rettangolo() {
         altezza = 0;
         base = 0;
     }
 
-        Rettangolo(double parametro) {
+        Rettangolo::Rettangolo(double parametro) {
         altezza = parametro;
         base = parametro;
     }
 
-        Rettangolo(double altezza, double base) {
+        Rettangolo::Rettangolo(double altezza, double base) {
         this->altezza = altezza;
         this->base = base;
     }
 
-        ~Rettangolo() {
+        Rettangolo::~Rettangolo() {
         cout<<"hai chiamato distruttore"<<endl;
     }
 
-    double Perimetro() {
+    double Rettangolo::Perimetro() {
         return (base + altezza) * 2;
     }
 
-    double Area() {
+    double Rettangolo::Area() {
         return base * altezza;
     }
 
-    double Diagonale() {
+    double Rettangolo::Diagonale() {
         return sqrt(altezza*altezza + base*base);
     }
 
-    void stampa() {
+    void Rettangolo::stampa() {
 
         cout<<"Il valore dell'altezza e' "<<altezza<<endl;
         cout<<"Il valore della base e' "<<base<<endl;
@@ -52,31 +44,4 @@ class Rettangolo {
         cout<<"Il valore della diagonale e' "<<Diagonale()<<endl;
         cout<<"fine della parte "<<endl;
     }
-};
 
-int main() {
-
-    double base, altezza, parametro;
-    
-    Rettangolo r1;
-    r1.stampa();
-
-    cout<<"Inserisci il valore del parametro"<<endl;
-    cin>>parametro;
-    Rettangolo r2(parametro);
-    //r2.~Rettangolo();
-    r2.stampa();
-
-    cout<<"Inserisci il valore dell'altezza"<<endl;
-    cin>>altezza;
-
-    cout<<"Inserisci il valore della base"<<endl;
-    cin>>base;
-
-    Rettangolo r3(altezza, base);
-
-    cout<<"[VALORI DEL PRIMO RETTANGOLO]"<<endl;
-    cout<<"-------------------------------------"<<endl;
-    r3.stampa();
-}
- 
