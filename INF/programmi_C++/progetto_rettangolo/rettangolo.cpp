@@ -14,7 +14,7 @@ using namespace std;
         base = parametro;
     }
 
-        Rettangolo::Rettangolo(double altezza, double base) {
+        Rettangolo::Rettangolo(double altezza, double base=2) {
         this->altezza = altezza;
         this->base = base;
     }

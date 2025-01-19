@@ -19,10 +19,10 @@ int main() {
     cout<<"Inserisci il valore dell'altezza"<<endl;
     cin>>altezza;
 
-    cout<<"Inserisci il valore della base"<<endl;
-    cin>>base;
+    //cout<<"Inserisci il valore della base"<<endl;
+    //cin>>base;
 
-    Rettangolo r3(altezza, base);
+    Rettangolo r3(altezza);
 
     cout<<"[VALORI DEL PRIMO RETTANGOLO]"<<endl;
     cout<<"-------------------------------------"<<endl;
