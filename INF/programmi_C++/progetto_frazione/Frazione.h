@@ -6,11 +6,7 @@ class Frazione {
         int numeratore;
         int denominatore;
     public:
-        Frazione();
-        
-        Frazione(int numeratore);
-
-        Frazione(int numeratore, int denominatore);
+        Frazione(int numeratore= 2, int denominatore= 2);
 
         void stampa();
 

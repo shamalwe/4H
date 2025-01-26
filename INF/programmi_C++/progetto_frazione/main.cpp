@@ -1,9 +1,8 @@
 #include "Frazione.h"
 
 int main() {
-    Frazione fra1;
+    Frazione fra1(1);
     fra1.stampa();
 
-    Frazione fra2(4);
-    fra2.stampa();
+
 }
