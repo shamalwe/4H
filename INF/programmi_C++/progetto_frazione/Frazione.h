@@ -10,5 +10,9 @@ class Frazione {
 
         void stampa();
 
+        int calcolaMCD();
+
+        void semplificaFrazione();
+
 };
 #endif
