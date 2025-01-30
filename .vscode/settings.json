@@ -2,6 +2,7 @@
     "files.associations": {
         "eSERCIZIO.C": "cpp",
         "fseek.C": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "ostream": "cpp"
     }
 }
