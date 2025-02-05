@@ -13,14 +13,14 @@ private:
     int voti[8];
     
 public:
-    Persona(string nome= "Mario", string cognome= "Rossi", int eta= 24, int voti[]);
+    Persona(string nome= "Mario", string cognome= "Rossi", int eta= 24);
 
-    void saluta();
+    void Saluta();
 
-    int calcolaMedia() {
-
-    }
-
+    void Stampavoti();
+    
+    int Media();
+    
 
 };
 
