@@ -13,6 +13,8 @@ class Quadrilatero {
     int Perimetro();
     int Area();
     void stampa();
+    void setLato(int l1);
+    int getLato();
 };
 
 #endif

@@ -25,3 +25,11 @@ void Quadrilatero::stampa() {
     cout << "Quarto lato: " << l4 << endl;
     cout << "Il valore del perimetro e': " << Perimetro() << endl;
 }
+
+void Quadrilatero::setLato(int l1) {
+    this->l1= l1;
+}
+
+int Quadrilatero::getLato() {
+    return l1;
+}
