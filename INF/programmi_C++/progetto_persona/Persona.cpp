@@ -21,12 +21,18 @@ void Persona::Stampavoti() {
     for(int i=0;i<8;i++) {
         cout<<voti[i]<<endl;
     }
-
+}
 int Persona::Media() {
     int media=0;
     int somma=0;
 
+    for(int i=0; i<8;i++) {
+        somma+=voti[i];
+    }
+
+    media = somma/8;
+
     return media;
 }
 
-}
+

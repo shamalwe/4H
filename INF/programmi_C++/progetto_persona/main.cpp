@@ -8,4 +8,7 @@ int main() {
 
     persona1.Saluta();
     persona1.Stampavoti();
+    int r= persona1.Media();
+    cout<< "la mia media e': "<< r <<endl;
+
 }
