@@ -9,12 +9,12 @@ class Quadrilatero {
 
     public:
 
+    Quadrilatero();
     Quadrilatero(int l1,int l2,int l3,int l4);
     int Perimetro();
-    int Area();
     void stampa();
-    void setLato(int l1);
-    int getLato();
+    void setLati(int l1=4, int l2=2, int l3=6, int l4=8);
+    void getLati();
 };
 
 #endif
