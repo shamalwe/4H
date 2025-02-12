@@ -3,6 +3,8 @@
 #include "Quadrilatero.h"
 #include <string>
 
+using namespace std;
+
 class Rettangolo : public Quadrilatero {
     
 private:
