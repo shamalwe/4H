@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Quadrato::Quadrato(int lato):Rettangolo(lato, lato, "colore") {
+Quadrato::Quadrato(int lato):Rettangolo(lato, lato, "") {
 
 }
     int Quadrato::Perimetro() {
