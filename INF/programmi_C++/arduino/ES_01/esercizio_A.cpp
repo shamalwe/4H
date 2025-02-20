@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 // Classe LED
 class LED {
   private:
