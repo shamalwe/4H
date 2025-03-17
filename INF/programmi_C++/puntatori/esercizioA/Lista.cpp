@@ -131,6 +131,7 @@ void Lista::rimuoviDuplicati()
             {
                 p = p->next; 
             }
+            
         }
         corrente = corrente->next;
     }
