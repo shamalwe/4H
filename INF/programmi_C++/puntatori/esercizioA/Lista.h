@@ -15,7 +15,7 @@ class Lista
     public:
     Lista();
     void inserisciInTesta(int valore);
-    void inserisciInCoda(int valore);
+    int inserisciInCoda(int valore);
     int eliminazione(int valore);
     void cerca(int valore);
     void stampa();

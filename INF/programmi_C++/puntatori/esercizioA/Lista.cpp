@@ -16,7 +16,7 @@ void Lista::inserisciInTesta(int valore)
     testa = nuovoNodo; 
 }
 
-void Lista::inserisciInCoda(int valore) 
+int Lista::inserisciInCoda(int valore) 
 {
     Nodo* nuovoNodo = new Nodo;
     nuovoNodo->info = valore;
@@ -25,7 +25,7 @@ void Lista::inserisciInCoda(int valore)
     if (testa == nullptr) 
     {
         testa = nuovoNodo;
-        return;
+        return 0;
     }
     
     Nodo* p = testa;
@@ -34,6 +34,7 @@ void Lista::inserisciInCoda(int valore)
         p = p->next;
     }
     p->next = nuovoNodo; // Colleghiamo il nuovo nodo alla fine
+    return 0;
 }
 
 int Lista::eliminazione(int valore) 

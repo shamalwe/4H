@@ -10,12 +10,12 @@ int main() {
     lista.inserisciInTesta(2);
     lista.inserisciInTesta(3);
 
-    lista.inserisciInCoda(4);
-    lista.inserisciInCoda(5);
+    int a= lista.inserisciInCoda(4);
+    int b= lista.inserisciInCoda(5);
 
     lista.stampa();
     cout << "\n";
-    int b = lista.eliminazione(3);
+    int c= lista.eliminazione(3);
     lista.stampa();
     cout << "\n";
 
