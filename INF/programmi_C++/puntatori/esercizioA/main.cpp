@@ -6,16 +6,16 @@ using namespace std;
 int main() {
     Lista lista;
 
-    lista.inserisciInTesta(7);
-    lista.inserisciInTesta(6);
-    lista.inserisciInTesta(5);
+    lista.inserisciInTesta(1);
+    lista.inserisciInTesta(2);
+    lista.inserisciInTesta(3);
 
-    lista.inserisciInCoda(8);
-    lista.inserisciInCoda(9);
+    lista.inserisciInCoda(4);
+    lista.inserisciInCoda(5);
 
     lista.stampa();
     cout << "\n";
-    lista.cancella(5);
+    int b = lista.eliminazione(3);
     lista.stampa();
     cout << "\n";
 

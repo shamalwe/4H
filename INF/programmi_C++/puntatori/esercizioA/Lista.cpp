@@ -11,7 +11,7 @@ Lista::Lista()
 void Lista::inserisciInTesta(int valore) 
 {
     Nodo* nuovoNodo = new Nodo;
-    nuovoNodo->dato = valore;
+    nuovoNodo->info = valore;
     nuovoNodo->next = testa; 
     testa = nuovoNodo; 
 }
@@ -19,7 +19,7 @@ void Lista::inserisciInTesta(int valore)
 void Lista::inserisciInCoda(int valore) 
 {
     Nodo* nuovoNodo = new Nodo;
-    nuovoNodo->dato = valore;
+    nuovoNodo->info = valore;
     nuovoNodo->next = nullptr; 
 
     if (testa == nullptr) 
@@ -36,36 +36,37 @@ void Lista::inserisciInCoda(int valore)
     p->next = nuovoNodo; // Colleghiamo il nuovo nodo alla fine
 }
 
-void Lista::cancella(int valore) 
+int Lista::eliminazione(int valore) 
 {
     if (testa == nullptr) 
     {
-        return;
+        return -1;
     }
 
-    if(testa->dato == valore) 
+    if(testa->info == valore) 
     {
         Nodo* p = testa;
         testa = testa->next; 
         delete p; 
-        return;
+        return  0;
     }
 
     
     Nodo* p = testa;
-    while (p->next != nullptr && p->next->dato != valore) 
+    while (p->next != nullptr && p->next->info != valore) 
     {
         p = p->next;
     }
 
-    if (p->next == nullptr) // Se il valore non è stato trovato
+    if (p->next == nullptr)
     {
-        return;
+        return -1;
     }
 
     Nodo* nodoDaEliminare = p->next;
     p->next = nodoDaEliminare->next; // Saltiamo il nodo eliminato
     delete nodoDaEliminare;
+    return 0;
 }
 
 void Lista::cerca(int valore) 
@@ -73,7 +74,7 @@ void Lista::cerca(int valore)
     Nodo* p = testa;
     while (p != nullptr) 
     {
-        if(p->dato == valore) 
+        if(p->info == valore) 
         {
             cout << "Elemento trovato nella lista." << "\n";
         } 
@@ -90,10 +91,9 @@ void Lista::stampa()
     Nodo* p = testa;
     while (p != nullptr) 
     {
-        cout << p->dato << "\n";
+        cout << p->info << "\n";
         p = p->next;
     }
-    cout << "NULL" << "\n"; //fine della lista
 }
 
 int Lista::contaNodi() 
@@ -119,7 +119,7 @@ void Lista::rimuoviDuplicati()
         Nodo* p = corrente;
         while (p->next != nullptr) 
         {
-            if (p->next->dato == corrente->dato) 
+            if (p->next->info == corrente->info) 
             {
                 
                 Nodo* nodoDaEliminare = p->next;

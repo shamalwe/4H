@@ -3,7 +3,7 @@
 #define LISTA_H
 
 struct Nodo {
-    int dato;
+    int info;
     Nodo* next;
 };
 
@@ -16,7 +16,7 @@ class Lista
     Lista();
     void inserisciInTesta(int valore);
     void inserisciInCoda(int valore);
-    void cancella(int valore);
+    int eliminazione(int valore);
     void cerca(int valore);
     void stampa();
     int contaNodi();
