@@ -15,11 +15,14 @@ int main() {
 
     lista.stampa();
     cout << "\n";
-    int c= lista.eliminazione(3);
+    int d = lista.contaNodi();
+    cout << "il numero di nodi presente nella lista e' " << d << "\n";
+    cout << "\n";
+    int c= lista.eliminazione(5);
     lista.stampa();
     cout << "\n";
 
-    lista.cerca(9);
+    lista.cerca(4);
     
     cout << "\n";
     int r = lista.contaNodi();
